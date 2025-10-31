@@ -7,7 +7,8 @@
 	<meta name="description" content="UD-VideoQA">
 	<meta name="keywords" content="UD-VideoQA">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="UD-VideoQA/media/UDVideoQA/teaser.png/">
+	<!-- Fixed meta image path -->
+	<meta property="og:image" content="./media/UDVideoQA/teaser.png">
 	<meta property="og:url" content="https://UD-VideoQA.github.io/UD-VideoQA/">
 	<meta property="og:description" content="Event-based Traffic Monitoring Dataset">
 
@@ -278,7 +279,8 @@
 		<div class="container is-max-desktop">
 			<div class="hero-body">
 				<!-- <img src="media/eTraM/gifs/eTramGIF-cropped.gif" class="center"/> -->
-				<img src="UD-VideoQA/media/UDVideoQA/teaser.png" class="center" />
+				<!-- Fixed teaser image path -->
+				<img src="./media/UDVideoQA/teaser.png" class="center" />
 				<h2 class="subtitles has-text-centered">
 					<strong>UD-VideoQA</strong> is a curated, publicly available traffic monitoring dataset gathered using
 					ARGOS Cameras and mobile devices under diverse weather and lighting conditions. It comprises 8 hours of
@@ -316,37 +318,30 @@
 		<div class="hero-body">
 			<div class="container">
 				<h2 class="title is-3">Dataset Statistics</h2>
+				<!-- Fixed carousel structure and image paths -->
 				<div id="carousel-demo" class="carousel">
-					<div class="columns is-centered has-text-centered">
-						<div class="item">
-							<img src="UD-VideoQA/media/UDVideoQA/Method.png" 
-								alt="RoadSical compared with other datasets" 
-								style="width: 100%; height: auto;"/>
-						</div>
+					<div class="item item-1">
+						<img src="./media/UDVideoQA/Method.png" 
+							alt="RoadSical compared with other datasets" 
+							style="width: 100%; height: auto;"/>
 					</div>
 									
-					<div class="columns is-centered has-text-centered">
-						<div class="item">
-							<img src="UD-VideoQA/media/UDVideoQA/Stats.png"
-								alt="Road event taxonomy of RoadSocial"
-								style="width: 100%; height: auto;"/>
-						</div>
+					<div class="item item-2">
+						<img src="./media/UDVideoQA/Stats.png"
+							alt="Road event taxonomy of RoadSocial"
+							style="width: 100%; height: auto;"/>
 					</div>
 
-					<div class="columns is-centered has-text-centered">
-						<div class="item">
-							<img src="UD-VideoQA/media/UDVideoQA/Intersection.png"
-								alt="Road event taxonomy of RoadSocial"
-								style="width: 100%; height: auto;"/>
-						</div>
+					<div class="item item-3">
+						<img src="./media/UDVideoQA/Intersection.png"
+							alt="Road event taxonomy of RoadSocial"
+							style="width: 100%; height: auto;"/>
 					</div>
 
-					<div class="columns is-centered has-text-centered">
-						<div class="item">
-							<img src="UD-VideoQA/media/UDVideoQA/Tool.png"
-								alt="Road event taxonomy of RoadSocial"
-								style="width: 100%; height: auto;"/>
-						</div>
+					<div class="item item-4">
+						<img src="./media/UDVideoQA/Tool.png"
+							alt="Road event taxonomy of RoadSocial"
+							style="width: 100%; height: auto;"/>
 					</div>
 
 				</div>
@@ -395,7 +390,8 @@
 				<div class="column is-four-fifths">
 					<hr>
 					<h2 class="title is-3">UD-VideoQA - Data Collection Setup and Diversity </h2>
-					<img src="media/InterAct/InterAct_Collection.png" class="center" />
+					<!-- Fixed image path -->
+					<img src="./media/InterAct/InterAct_Collection.png" class="center" />
 					<div class="content has-text-justified">
 						<br>
 						<p> Overview of the UD-VideoQA data collection framework, integrating traffic video recording and
@@ -420,14 +416,15 @@
 				<div class="column is-four-fifths">
 
 					<h2 class="title is-3">UD-VideoQA - Video Question Generation LeaderBoard </h2>
-					<img src="media/UDVideoQA/Video_Qgen.png" class="center" />
+					<!-- Fixed image path -->
+					<img src="./media/UDVideoQA/Video_Qgen.png" class="center" />
 					<div class="content has-text-justified">
 						<br>
 						<p> Overview of the UD-VideoQA dataset, which comprises 28,800 question-answer pairs across various
 							reasoning categories. A higher concentration appears in counting, attribute recognition, and event
 							reasoning, followed by counterfactual inference and reverse reasoning (3a). Figures 3(b)-(d) illustrate
 							the dataset's emphasis on vehicular-related questions, the dominance of attribution and event reasoning
-							categories, and the distribution of question types (“what,” “where,” and “how”). This structured approach
+							categories, and the distribution of question types ("what," "where," and "how"). This structured approach
 							supports the analysis of complex, multi-event traffic scenarios, requiring robust spatio-temporal
 							reasoning. A rigorous human and GPT-assisted validation process ensures the consistency, accuracy, and
 							reliability of all annotations.
@@ -447,7 +444,8 @@
 				<div class="column is-four-fifths">
 
 					<h2 class="title is-3">InterAct - Experimentation Statistics </h2>
-					<img src="media/InterAct/InterAct_Model_Stats.png" class="center" />
+					<!-- Fixed image path -->
+					<img src="./media/InterAct/InterAct_Model_Stats.png" class="center" />
 					<div class="content has-text-justified">
 						<br>
 						<p> Performance analysis of VideoLlama2, Llava-NeXT-Video, and Qwen2-VL-7B-hf on the InterAct VideoQA
