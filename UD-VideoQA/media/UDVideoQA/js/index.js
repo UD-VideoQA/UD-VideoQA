@@ -76,3 +76,36 @@
 //     bulmaSlider.attach();
 
 // })
+
+// Import Bulma carousel library
+import bulmaCarousel from "bulma-carousel"
+
+// Initialize Bulma carousel when DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize the carousel
+  const carousels = bulmaCarousel.attach("#carousel-demo", {
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    navigation: true,
+    navigationKeys: true,
+    pagination: true,
+  })
+
+  // Mobile navbar burger functionality
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0)
+
+  if ($navbarBurgers.length > 0) {
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        const target = el.dataset.target
+        const $target = document.getElementById(target)
+        el.classList.toggle("is-active")
+        $target.classList.toggle("is-active")
+      })
+    })
+  }
+})
+
