@@ -300,7 +300,7 @@
 	<section class="hero is-small" id="Statistics">
 		<div class="hero-body">
 			<div class="container">
-				<h2 class="title is-3">Dataset Statistics</h2>
+				<h2 class="title is-3">Dataset Overview</h2>
 				<div id="carousel-demo" class="carousel">
 					<div class="item item-1">
 						<img src="./media/UDVideoQA/Method.png" 
@@ -493,21 +493,305 @@
 		<div class="container is-max-desktop">
 			<div class="columns is-centered has-text-centered">
 				<div class="column is-four-fifths">
-					<h2 class="title is-3">InterAct - Experimentation Statistics </h2>
-					<img src="media\UDVideoQA\InterAct_Model_Stats.png" class="center" />
-					<div class="content has-text-justified">
-						<br>
-						<p> Performance analysis of VideoLlama2, Llava-NeXT-Video, and Qwen2-VL-7B-hf on the InterAct VideoQA
-							dataset, highlighting metric distributions (a), before vs. after fine-tuning (b), and multi-metric
-							improvements (c). Notably, <strong>Qwen2-VL-7B-hf</strong> demonstrates the most substantial gains across
-							complex reasoning tasks, emphasizing the effectiveness of fine-tuning for robust traffic video analysis.
-						</p>
-					</div>
-				</div>
-			</div>
-			<hr>
-		</div>
-	</section>
+					<h2 class="title is-3">The VideoQA Benchmark</h2>
+				<section class="hero teaser">
+
+        <div class="content has-text-justified">
+          <br>
+
+          <div class="leaderboard-container">
+            <div class="table-container" style="overflow-x:auto;">
+              <table class="table leaderboard-table is-hoverable is-fullwidth"
+                     style="font-size:0.75em; text-align:center;">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Model Type</th>
+                    <th rowspan="2">Model Name</th>
+                    <th colspan="6">Morning</th>
+                    <th colspan="6">Afternoon</th>
+                    <th colspan="6">Evening</th>
+                  </tr>
+                  <tr>
+                    <!-- Morning -->
+                    <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th><th>Overall</th>
+                    <!-- Afternoon -->
+                    <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th><th>Overall</th>
+                    <!-- Evening -->
+                    <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th><th>Overall</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <!-- Proprietary Models -->
+                  <tr>
+                    <td rowspan="4"><strong>Proprietary</strong></td>
+                    <td><strong>Gemini 2.5 Pro</strong></td>
+                    <td style="background:#FD6864;">90.00</td>
+                    <td style="background:#ADD8E6;">22.22</td>
+                    <td style="background:#FD6864;">88.89</td>
+                    <td style="background:#FD6864;">86.10</td>
+                    <td style="background:#DC143C;color:white;">91.70</td>
+                    <td style="background:#FF8C00;">75.78</td>
+
+                    <td style="background:#FF8C00;">78.27</td>
+                    <td style="background:#FFA500;">65.44</td>
+                    <td style="background:#FF8C00;">75.42</td>
+                    <td style="background:#FF8C00;">73.81</td>
+                    <td style="background:#FF8C00;">72.56</td>
+                    <td style="background:#FF8C00;">73.10</td>
+
+                    <td style="background:#FD6864;">87.39</td>
+                    <td style="background:#FFD700;">50.00</td>
+                    <td style="background:#FFA500;">62.09</td>
+                    <td style="background:#FF8C00;">76.37</td>
+                    <td style="background:#FF8C00;">79.80</td>
+                    <td style="background:#FF8C00;">71.13</td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Gemini 2.5 Flash</strong></td>
+                    <td style="background:#FD6864;">80.00</td>
+                    <td style="background:#ADD8E6;">22.22</td>
+                    <td style="background:#FF8C00;">77.78</td>
+                    <td style="background:#FF8C00;">77.78</td>
+                    <td style="background:#FD6864;">89.88</td>
+                    <td style="background:#FFA500;">69.53</td>
+
+                    <td style="background:#FD6864;">82.87</td>
+                    <td style="background:#FF8C00;">75.61</td>
+                    <td style="background:#FF8C00;">74.91</td>
+                    <td style="background:#FF8C00;">75.65</td>
+                    <td style="background:#FFA500;">65.85</td>
+                    <td style="background:#FF8C00;">74.98</td>
+
+                    <td style="background:#FFD700;">50.00</td>
+                    <td style="background:#FFD700;">50.00</td>
+                    <td style="background:#FFA500;">68.68</td>
+                    <td style="background:#FF8C00;">72.53</td>
+                    <td style="background:#FFA500;">61.60</td>
+                    <td style="background:#FFA500;">60.56</td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td style="background:#FD6864;">80.00</td>
+                    <td style="background:#ADD8E6;">25.00</td>
+                    <td style="background:#FFD700;">50.00</td>
+                    <td style="background:#FFA500;">63.89</td>
+                    <td style="background:#FD6864;">82.22</td>
+                    <td style="background:#FFA500;">60.22</td>
+
+                    <td style="background:#FF8C00;">74.83</td>
+                    <td style="background:#FFA500;">69.96</td>
+                    <td style="background:#FF8C00;">70.68</td>
+                    <td style="background:#FF8C00;">70.13</td>
+                    <td style="background:#FFA500;">68.90</td>
+                    <td style="background:#FF8C00;">70.90</td>
+
+                    <td style="background:#FFD700;">58.79</td>
+                    <td style="background:#FFD700;">50.00</td>
+                    <td style="background:#FFFFE0;">47.80</td>
+                    <td style="background:#FFD700;">54.94</td>
+                    <td style="background:#FFD700;">58.50</td>
+                    <td style="background:#FFD700;">54.01</td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>GPT-4o</strong></td>
+                    <td style="background:#FF8C00;">75.00</td>
+                    <td style="background:#ADD8E6;">25.00</td>
+                    <td style="background:#FFA500;">69.44</td>
+                    <td style="background:#FFFFE0;">47.22</td>
+                    <td style="background:#FD6864;">85.88</td>
+                    <td style="background:#FFA500;">60.51</td>
+
+                    <td style="background:#FFD700;">58.74</td>
+                    <td style="background:#ADD8E6;">19.68</td>
+                    <td style="background:#E0FFFF;">35.32</td>
+                    <td style="background:#ADD8E6;">22.56</td>
+                    <td style="background:#FFFFE0;">45.61</td>
+                    <td style="background:#E0FFFF;">36.38</td>
+
+                    <td style="background:#FFD700;">50.00</td>
+                    <td style="background:#ADD8E6;">8.24</td>
+                    <td style="background:#FFD700;">56.59</td>
+                    <td style="background:#FFD700;">58.79</td>
+                    <td style="background:#FF8C00;">76.38</td>
+                    <td style="background:#FFD700;">50.00</td>
+                  </tr>
+
+				<tr>
+  <td rowspan="6"><strong>Open Source</strong></td>
+  <td><strong>Qwen 2.5 32B</strong></td>
+
+  <td style="background:#FF8C00;">75.66</td>
+  <td style="background:#E0FFFF;">36.11</td>
+  <td style="background:#FFA500;">66.67</td>
+  <td style="background:#ADD8E6;">25.00</td>
+  <td style="background:#FF8C00;">77.78</td>
+  <td style="background:#FFD700;">56.24</td>
+
+  <td style="background:#FFA500;">64.37</td>
+  <td style="background:#FFFFE0;">48.59</td>
+  <td style="background:#FFD700;">53.66</td>
+  <td style="background:#FFFFE0;">44.17</td>
+  <td style="background:#FFD700;">51.83</td>
+  <td style="background:#FFD700;">52.52</td>
+
+  <td style="background:#FF8C00;">72.07</td>
+  <td style="background:#FFFFE0;">40.78</td>
+  <td style="background:#FFFFE0;">45.96</td>
+  <td style="background:#FF8C00;">78.03</td>
+  <td style="background:#FFD700;">53.16</td>
+  <td style="background:#FFD700;">58.00</td>
+</tr>
+
+<tr>
+  <td><strong>Qwen 2.5 7B (Fine-Tuned)</strong></td>
+
+  <td style="background:#FF8C00;">74.80</td>
+  <td style="background:#ADD8E6;">16.67</td>
+  <td style="background:#FF8C00;">75.56</td>
+  <td style="background:#FFD700;">50.00</td>
+  <td style="background:#FF8C00;">77.78</td>
+  <td style="background:#FFD700;">58.96</td>
+
+  <td style="background:#FFA500;">63.22</td>
+  <td style="background:#FFD700;">53.11</td>
+  <td style="background:#FFD700;">54.27</td>
+  <td style="background:#E0FFFF;">39.88</td>
+  <td style="background:#FFD700;">53.66</td>
+  <td style="background:#FFD700;">52.83</td>
+
+  <td style="background:#FFA500;">66.07</td>
+  <td style="background:#FF8C00;">71.30</td>
+  <td style="background:#FFD700;">56.59</td>
+  <td style="background:#FFD700;">58.79</td>
+  <td style="background:#FFD700;">54.17</td>
+  <td style="background:#FFA500;">61.38</td>
+</tr>
+
+<tr>
+  <td><strong>VideoLLaMA3</strong></td>
+
+  <td style="background:#FFA500;">65.60</td>
+  <td style="background:#ADD8E6;">22.22</td>
+  <td style="background:#FFD700;">58.33</td>
+  <td style="background:#FFD700;">58.33</td>
+  <td style="background:#FFA500;">69.34</td>
+  <td style="background:#FFD700;">54.76</td>
+
+  <td style="background:#FFD700;">59.77</td>
+  <td style="background:#E0FFFF;">36.72</td>
+  <td style="background:#FFFFE0;">49.39</td>
+  <td style="background:#ADD8E6;">28.83</td>
+  <td style="background:#FFFFE0;">48.78</td>
+  <td style="background:#FFFFE0;">44.70</td>
+
+  <td style="background:#FFA500;">66.21</td>
+  <td style="background:#FFD700;">50.00</td>
+  <td style="background:#FFD700;">53.84</td>
+  <td style="background:#FFD700;">58.79</td>
+  <td style="background:#FFFFE0;">49.87</td>
+  <td style="background:#FFD700;">55.74</td>
+</tr>
+
+<tr>
+  <td><strong>NVILA 8B</strong></td>
+
+  <td style="background:#FFD700;">55.32</td>
+  <td style="background:#ADD8E6;">22.22</td>
+  <td style="background:#FF8C00;">72.22</td>
+  <td style="background:#FFFFE0;">47.22</td>
+  <td style="background:#FFD700;">53.33</td>
+  <td style="background:#FFD700;">50.06</td>
+
+  <td style="background:#FFA500;">64.37</td>
+  <td style="background:#E0FFFF;">33.90</td>
+  <td style="background:#FFD700;">54.88</td>
+  <td style="background:#E0FFFF;">30.06</td>
+  <td style="background:#FFD700;">52.44</td>
+  <td style="background:#FFFFE0;">47.13</td>
+
+  <td style="background:#FFD700;">52.31</td>
+  <td style="background:#FFFFE0;">49.82</td>
+  <td style="background:#FFA500;">49.19</td>
+  <td style="background:#FFA500;">45.47</td>
+  <td style="background:#ADD8E6;">50.00</td>
+  <td style="background:#FFFFE0;">49.44</td>
+</tr>
+
+<tr>
+  <td><strong>InternVL3 38B</strong></td>
+
+  <td style="background:#FF8C00;">70.00</td>
+  <td style="background:#E0FFFF;">36.11</td>
+  <td style="background:#FFFFE0;">47.22</td>
+  <td style="background:#FFA500;">66.67</td>
+  <td style="background:#FFA500;">67.22</td>
+  <td style="background:#FFD700;">57.44</td>
+
+  <td style="background:#FFA500;">61.49</td>
+  <td style="background:#E0FFFF;">36.72</td>
+  <td style="background:#FFFFE0;">46.95</td>
+  <td style="background:#ADD8E6;">26.99</td>
+  <td style="background:#FFD700;">59.15</td>
+  <td style="background:#FFFFE0;">46.26</td>
+
+  <td style="background:#E0FFFF;">38.33</td>
+  <td style="background:#FFFFE0;">47.22</td>
+  <td style="background:#FFD700;">53.33</td>
+  <td style="background:#FFA500;">65.00</td>
+  <td style="background:#FFFFE0;">40.02</td>
+  <td style="background:#FFFFE0;">48.78</td>
+</tr>
+
+<tr>
+  <td><strong>LLaVA-NeXT-Video 7B</strong></td>
+
+  <td style="background:#FFFFE0;">44.80</td>
+  <td style="background:#ADD8E6;">2.78</td>
+  <td style="background:#FFA500;">63.89</td>
+  <td style="background:#E0FFFF;">33.33</td>
+  <td style="background:#ADD8E6;">22.22</td>
+  <td style="background:#E0FFFF;">33.40</td>
+
+  <td style="background:#FFFFE0;">45.40</td>
+  <td style="background:#ADD8E6;">16.95</td>
+  <td style="background:#ADD8E6;">23.78</td>
+  <td style="background:#ADD8E6;">16.56</td>
+  <td style="background:#ADD8E6;">25.61</td>
+  <td style="background:#ADD8E6;">25.66</td>
+
+  <td style="background:#E0FFFF;">30.10</td>
+  <td style="background:#ADD8E6;">1.10</td>
+  <td style="background:#FFD700;">54.40</td>
+  <td style="background:#ADD8E6;">23.63</td>
+  <td style="background:#ADD8E6;">5.49</td>
+  <td style="background:#ADD8E6;">22.94</td>
+</tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p class="has-text-justified">
+  <em>The <i>VideoQA</i> Benchmark.</em>
+  It presents comparative performance across proprietary and open-source video reasoning models evaluated under varying illumination conditions:
+  high intensity (afternoon), medium intensity (morning), and low intensity (evening).
+  Overall results show that Gemini 2.5 Pro achieved the highest accuracy in the Morning (75.78%)
+  and Evening (71.13%) conditions, while Gemini 2.5 Flash scored the highest in the Afternoon (74.98%).
+  <em>Llava-NeXT-Video</em> exhibited the weakest overall performance.
+</p>
+
+
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</section>
+
 
 	<section class="hero teaser">
 		<div class="container is-max-desktop" style="max-width: 200%; width: 1200px;">
@@ -537,14 +821,7 @@
 				<h2 class="title">BibTeX</h2>
 			</center>
 			<pre>
-@misc{vishal2025interactvideoreasoningrichvideoqa,
-      title={UD-Video: Reasoning-Rich Video QA for Urban Traffic}, 
-      author={Joseph Raj Vishal and Divesh Basina and Rutuja Patil and Manas Srinivas Gowda and Katha Naik and Kashyap Hegde Kota and Yezhou Yang and Bharatesh Chakravarthi},
-      year={2025},
-      eprint={2507.14743},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2507.14743}, 
+@misc{} 
 }
 			</pre>
 		</div>
