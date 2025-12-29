@@ -43,8 +43,69 @@
 			width: 100%;
 			height: 240px;
 		}
+
+		/* Added styles for consistent carousel image sizing */
+		#carousel-demo .item {
+			height: 500px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #ffffff;
+		}
+
+		#carousel-demo .item img {
+			max-height: 100%;
+			max-width: 100%;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+		}
+
+		/* Hide carousel pagination dots */
+		.slider-pagnation,
+		.carousel-pagination {
+			display: none !important;
+		}
+
+		/* NEW: Aesthetic Leaderboard Styles */
+		.leaderboard-container {
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			border-radius: 12px;
+			overflow: hidden;
+			border: 1px solid #f0f0f0;
+			background: white;
+			margin-top: 1rem;
+		}
+
+		.leaderboard-table {
+			margin-bottom: 0 !important;
+			font-family: 'Google Sans', sans-serif;
+		}
+
+		.leaderboard-table th {
+			background-color: #fcfcfc;
+			color: #1f2937;
+			font-weight: 700;
+			font-size: 0.85em;
+			padding: 12px 8px !important;
+			border-bottom: 2px solid #e5e7eb !important;
+			vertical-align: middle !important;
+		}
+
+		.leaderboard-table td {
+			padding: 10px 6px !important;
+			font-weight: 500;
+			vertical-align: middle !important;
+			border: 1px solid #f5f5f5;
+			/* Very subtle border */
+		}
+
+		/* Remove default striping so heatmap colors pop */
+		.table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+			background-color: transparent;
+		}
 	</style>
-</head>
+</head>	
 
 <body>
 
@@ -110,10 +171,10 @@
 						</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="author-block">
 							<a href="">Krishna Vinod</a>
-						</span>
+						</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="author-block">
-							<a href="">Kashap</a>
-						</span>
+							<a href="https://github.com/KashyapHegdeKota">Kashyap Hegde Kota</a>
+						</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 						<span class="author-block">
 							<a href="">Pritvi Jai</a>
@@ -134,6 +195,37 @@
 
 					<div class="column has-text-centered">
 						<div class="publication-links">
+							<!-- Paper -->
+							<span class="link-block">
+								<a href="docs/UD-VideoQADatasetDescription.pdf" target="_blank"
+									class="external-link button is-normal is-rounded is-dark">
+									<span class="icon">
+										<i class="fas fa-file-pdf"></i>
+									</span>
+									<span>Paper</span>
+								</a>
+							</span>
+							<!-- Dataset -->
+							<span class="link-block">
+								<a href="https://huggingface.co/UDVideoQA"
+									target="_blank" class="external-link button is-normal is-rounded is-dark">
+									<span class="icon">
+										<i class="far fa-hugging-face"></i>
+									</span>
+									<span>Dataset</span>
+								</a>
+							</span>
+							<!-- Tool -->
+							<span class="link-block">
+								<a href="https://github.com/UDVideoQA/UDVideoQA-Annotation_Tools"
+									target="_blank" class="external-link button is-normal is-rounded is-dark">
+									<span class="icon">
+										<i class="far fa-images"></i>
+									</span>
+									<span>Tool</span>
+								</a>
+							</span>
+							<!-- Code -->
 							<span class="link-block">
 								<a href="https://github.com/UDVideoQA/UDVideoQA-finetune" target="_blank"
 									class="external-link button is-normal is-rounded is-dark">
@@ -143,41 +235,14 @@
 									<span>Code</span>
 								</a>
 							</span>
-
+							<!-- Checkpoint -->
 							<span class="link-block">
-								<a href="https://huggingface.co/UDVideoQA"
-									target="_blank" class="external-link button is-normal is-rounded is-dark">
-									<span class="icon">
-										<i class="far fa-hugging-face"></i>
-									</span>
-									<span>Data</span>
-								</a>
-							</span>
-							<span class="link-block">
-								<a href="docs/UD-VideoQADatasetDescription.pdf" target="_blank"
-									class="external-link button is-normal is-rounded is-dark">
-									<span class="icon">
-										<i class="fas fa-file-pdf"></i>
-									</span>
-									<span>Dataset Description</span>
-								</a>
-							</span>
-								<span class="link-block">
 								<a href="https://huggingface.co/UDVideoQA" target="_blank"
 									class="external-link button is-normal is-rounded is-dark">
 									<span class="icon">
 										<i class="far fa-hugging-face"></i>
 									</span>
-									<span>Checkpoints</span>
-								</a>
-							</span>
-							<span class="link-block">
-								<a href="https://github.com/UDVideoQA/UDVideoQA-Annotation_Tools"
-									target="_blank" class="external-link button is-normal is-rounded is-dark">
-									<span class="icon">
-										<i class="far fa-images"></i>
-									</span>
-									<span>Annotation Tool</span>
+									<span>Checkpoint</span>
 								</a>
 							</span>
 						</div>
@@ -200,33 +265,6 @@
 					includes five QA types: (1) attribution, (2) counting, (3) event reasoning, (4) reverse reasoning, and (5)
 					counterfactual inference.
 				</h2>
-			</div>
-		</div>
-	</section>
-
-	<!-- Restored original Bulma carousel structure -->
-	<section class="hero is-small" id="Statistics">
-		<div class="hero-body">
-			<div class="container">
-				<h2 class="title is-3">Dataset Statistics</h2>
-				<div id="carousel-demo" class="carousel">
-					<div class="item item-1">
-						<img src="./media/UDVideoQA/Method.png" 
-							alt="RoadSical compared with other datasets"/>
-					</div>
-					<div class="item item-2">
-						<img src="./media/UDVideoQA/Stats.png"
-							alt="Road event taxonomy of RoadSocial"/>
-					</div>
-					<div class="item item-3">
-						<img src="./media/UDVideoQA/Intersection.png"
-							alt="Road event taxonomy of RoadSocial"/>
-					</div>
-					<div class="item item-4">
-						<img src="./media/UDVideoQA/Tool.png"
-							alt="Road event taxonomy of RoadSocial"/>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -258,13 +296,45 @@
 		</div>
 	</section>
 
+	<!-- Restored original Bulma carousel structure -->
+	<section class="hero is-small" id="Statistics">
+		<div class="hero-body">
+			<div class="container">
+				<h2 class="title is-3">Dataset Statistics</h2>
+				<div id="carousel-demo" class="carousel">
+					<div class="item item-1">
+						<img src="./media/UDVideoQA/Method.png" 
+							alt="RoadSical compared with other datasets"/>
+					</div>
+					<div class="item item-2">
+						<img src="./media/UDVideoQA/Stats.png"
+							alt="Road event taxonomy of RoadSocial"/>
+					</div>
+					<div class="item item-3">
+						<img src="./media/UDVideoQA/Intersection.png"
+							alt="Road event taxonomy of RoadSocial"/>
+					</div>
+					<div class="item item-4">
+						<img src="./media/UDVideoQA/Tool.png"
+							alt="Road event taxonomy of RoadSocial"/>
+					</div>
+					<div class="item item-5">
+						<img src="./media/UDVideoQA/VQA_Parallel.png"
+							alt="A chart compares worst-to-best performance score ranges (0–100%) for 10 video models, with open-source models in orange and proprietary models in purple, and Gemini 2.5 Pro scoring highest."/>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="hero teaser">
 		<div class="container is-max-desktop">
 			<div class="columns is-centered has-text-centered">
 				<div class="column is-four-fifths">
 					<hr>
 					<h2 class="title is-3">UD-VideoQA - Data Collection Setup and Diversity </h2>
-					<img src="./media/InterAct/InterAct_Collection.png" class="center" />
+					<img src="media/UDVideoQA/InterAct_Collection.png" class="center" />
 					<div class="content has-text-justified">
 						<br>
 						<p> Overview of the UD-VideoQA data collection framework, integrating traffic video recording and
@@ -285,10 +355,125 @@
 			<div class="columns is-centered has-text-centered">
 				<div class="column is-four-fifths">
 					<h2 class="title is-3">UD-VideoQA - Video Question Generation LeaderBoard </h2>
-					<img src="./media/UDVideoQA/Video_Qgen.png" class="center" />
+					
 					<div class="content has-text-justified">
-						<br>
-						<p> Overview of the UD-VideoQA dataset, which comprises 28,800 question-answer pairs across various
+                        <br>
+                        <!-- New Container Wrapper -->
+                        <div class="leaderboard-container">
+                            <div class="table-container" style="overflow-x: auto;">
+                                <!-- Updated Table Classes -->
+                                <table class="table leaderboard-table is-hoverable is-fullwidth" style="font-size: 0.7em; text-align: center;">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2" style="vertical-align: middle;">Model Name</th>
+                                            <th colspan="5" class="has-text-centered">Relevance</th>
+                                            <th colspan="5" class="has-text-centered">Answerability</th>
+                                            <th colspan="5" class="has-text-centered">Diversity</th>
+                                            <th colspan="5" class="has-text-centered">Pedestrian Centric</th>
+                                            <th colspan="5" class="has-text-centered">Vehicle Centric</th>
+                                            <th colspan="5" class="has-text-centered">Specific (Grounded)</th>
+                                            <th colspan="5" class="has-text-centered">Generic</th>
+                                        </tr>
+                                        <tr>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                            <th>BU</th><th>Atr</th><th>ER</th><th>RR</th><th>CI</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Gemini 2.5 Pro</strong></td>
+                                            <td style="background-color: #DC143C; color: white;">92</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">82</td><td style="background-color: #FD6864;">86</td><td style="background-color: #FD6864;">80</td>
+                                            <td style="background-color: #FD6864;">90</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">82</td>
+                                            <td style="background-color: #FFA500;">64</td><td style="background-color: #FFA500;">62</td><td style="background-color: #FFA500;">66</td><td style="background-color: #FFA500;">64</td><td style="background-color: #FFA500;">60</td>
+                                            <td style="background-color: #E0FFFF;">35</td><td style="background-color: #E0FFFF;">30</td><td style="background-color: #FFFFE0;">45</td><td style="background-color: #FFFFE0;">40</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #FFD700;">55</td><td style="background-color: #FFA500;">60</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFFFE0;">45</td>
+                                            <td style="background-color: #FF8C00;">70</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FFA500;">65</td><td style="background-color: #FFA500;">60</td><td style="background-color: #FFD700;">55</td>
+                                            <td style="background-color: #E0FFFF;">30</td><td style="background-color: #ADD8E6;">20</td><td style="background-color: #E0FFFF;">35</td><td style="background-color: #FFFFE0;">40</td><td style="background-color: #FFFFE0;">45</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Qwen3 Max</strong></td>
+                                            <td style="background-color: #FD6864;">82</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">85</td><td style="background-color: #FD6864;">85</td>
+                                            <td style="background-color: #DC143C; color: white;">92</td><td style="background-color: #FD6864;">88</td><td style="background-color: #FD6864;">88</td><td style="background-color: #FD6864;">88</td><td style="background-color: #FD6864;">88</td>
+                                            <td style="background-color: #FFD700;">50</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFFFE0;">48</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #E0FFFF;">33</td><td style="background-color: #FFFFE0;">41</td><td style="background-color: #FFFFE0;">49</td><td style="background-color: #FFFFE0;">46</td><td style="background-color: #FFFFE0;">43</td>
+                                            <td style="background-color: #FFA500;">67</td><td style="background-color: #FFD700;">59</td><td style="background-color: #FFD700;">51</td><td style="background-color: #FFD700;">54</td><td style="background-color: #FFD700;">57</td>
+                                            <td style="background-color: #E0FFFF;">38</td><td style="background-color: #FFFFE0;">45</td><td style="background-color: #FFD700;">56</td><td style="background-color: #FFD700;">57</td><td style="background-color: #FFFFE0;">49</td>
+                                            <td style="background-color: #FFA500;">62</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFFFE0;">43</td><td style="background-color: #FFD700;">51</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Gemini Flash</strong></td>
+                                            <td style="background-color: #FF8C00;">78</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">82</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">80</td>
+                                            <td style="background-color: #FF8C00;">77</td><td style="background-color: #FD6864;">81</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FD6864;">83</td><td style="background-color: #FD6864;">82</td>
+                                            <td style="background-color: #FFA500;">64</td><td style="background-color: #FFFFE0;">43</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFFFE0;">47</td><td style="background-color: #FFFFE0;">41</td>
+                                            <td style="background-color: #E0FFFF;">36</td><td style="background-color: #FFFFE0;">43</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFFFE0;">47</td><td style="background-color: #FFFFE0;">41</td>
+                                            <td style="background-color: #FFA500;">64</td><td style="background-color: #FFD700;">57</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFD700;">53</td><td style="background-color: #FFD700;">59</td>
+                                            <td style="background-color: #E0FFFF;">39</td><td style="background-color: #FFFFE0;">45</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">56</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #FFA500;">61</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFFFE0;">42</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFD700;">51</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Qwen3-VL-235B</strong></td>
+                                            <td style="background-color: #FF8C00;">70</td><td style="background-color: #FF8C00;">76</td><td style="background-color: #FF8C00;">79</td><td style="background-color: #FD6864;">81</td><td style="background-color: #FF8C00;">74</td>
+                                            <td style="background-color: #FF8C00;">76</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FD6864;">82</td><td style="background-color: #FF8C00;">77</td>
+                                            <td style="background-color: #FFD700;">56</td><td style="background-color: #FFD700;">59</td><td style="background-color: #FFA500;">62</td><td style="background-color: #FFA500;">63</td><td style="background-color: #FFD700;">58</td>
+                                            <td style="background-color: #E0FFFF;">31</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFFFE0;">49</td><td style="background-color: #FFFFE0;">46</td><td style="background-color: #FFFFE0;">42</td>
+                                            <td style="background-color: #FFA500;">69</td><td style="background-color: #FFFFE0;">48</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #FFFFE0;">42</td><td style="background-color: #FFFFE0;">48</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">52</td><td style="background-color: #FFFFE0;">45</td><td style="background-color: #FFFFE0;">42</td><td style="background-color: #FFD700;">50</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Gemini 2.5 Flash</strong></td>
+                                            <td style="background-color: #FF8C00;">74</td><td style="background-color: #FF8C00;">70</td><td style="background-color: #FF8C00;">72</td><td style="background-color: #FFA500;">68</td><td style="background-color: #FF8C00;">72</td>
+                                            <td style="background-color: #FD6864;">86</td><td style="background-color: #FD6864;">85</td><td style="background-color: #FD6864;">84</td><td style="background-color: #FD6864;">83</td><td style="background-color: #FD6864;">85</td>
+                                            <td style="background-color: #E0FFFF;">34</td><td style="background-color: #E0FFFF;">34</td><td style="background-color: #E0FFFF;">34</td><td style="background-color: #E0FFFF;">33</td><td style="background-color: #E0FFFF;">33</td>
+                                            <td style="background-color: #E0FFFF;">38</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFFFE0;">49</td><td style="background-color: #FFFFE0;">46</td><td style="background-color: #FFFFE0;">42</td>
+                                            <td style="background-color: #FFA500;">62</td><td style="background-color: #FFD700;">56</td><td style="background-color: #FFD700;">51</td><td style="background-color: #FFD700;">54</td><td style="background-color: #FFD700;">58</td>
+                                            <td style="background-color: #FFFFE0;">41</td><td style="background-color: #FFFFE0;">47</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFD700;">57</td><td style="background-color: #FFFFE0;">46</td>
+                                            <td style="background-color: #FFD700;">59</td><td style="background-color: #FFD700;">53</td><td style="background-color: #FFFFE0;">45</td><td style="background-color: #FFFFE0;">43</td><td style="background-color: #FFD700;">54</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Qwen3-VL-30B</strong></td>
+                                            <td style="background-color: #FF8C00;">72</td><td style="background-color: #FF8C00;">78</td><td style="background-color: #FF8C00;">77</td><td style="background-color: #FF8C00;">79</td><td style="background-color: #FF8C00;">74</td>
+                                            <td style="background-color: #FF8C00;">76</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FF8C00;">79</td><td style="background-color: #FD6864;">81</td><td style="background-color: #FF8C00;">78</td>
+                                            <td style="background-color: #FFFFE0;">47</td><td style="background-color: #FFFFE0;">48</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFD700;">50</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #E0FFFF;">34</td><td style="background-color: #FFFFE0;">43</td><td style="background-color: #FFD700;">51</td><td style="background-color: #FFFFE0;">48</td><td style="background-color: #FFFFE0;">45</td>
+                                            <td style="background-color: #FFA500;">66</td><td style="background-color: #FFD700;">57</td><td style="background-color: #FFFFE0;">49</td><td style="background-color: #FFD700;">52</td><td style="background-color: #FFD700;">55</td>
+                                            <td style="background-color: #E0FFFF;">39</td><td style="background-color: #FFFFE0;">46</td><td style="background-color: #FFD700;">56</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #FFA500;">61</td><td style="background-color: #FFD700;">54</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFFFE0;">42</td><td style="background-color: #FFD700;">50</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>GPT-5</strong></td>
+                                            <td style="background-color: #FF8C00;">71</td><td style="background-color: #FF8C00;">73</td><td style="background-color: #FF8C00;">75</td><td style="background-color: #FF8C00;">77</td><td style="background-color: #FF8C00;">72</td>
+                                            <td style="background-color: #FF8C00;">77</td><td style="background-color: #FF8C00;">79</td><td style="background-color: #FD6864;">80</td><td style="background-color: #FD6864;">82</td><td style="background-color: #FF8C00;">78</td>
+                                            <td style="background-color: #FFD700;">53</td><td style="background-color: #FFD700;">55</td><td style="background-color: #FFD700;">57</td><td style="background-color: #FFD700;">59</td><td style="background-color: #FFD700;">55</td>
+                                            <td style="background-color: #E0FFFF;">34</td><td style="background-color: #FFFFE0;">42</td><td style="background-color: #FFFFE0;">47</td><td style="background-color: #FFFFE0;">46</td><td style="background-color: #FFFFE0;">43</td>
+                                            <td style="background-color: #FFA500;">66</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">53</td><td style="background-color: #FFD700;">54</td><td style="background-color: #FFD700;">57</td>
+                                            <td style="background-color: #E0FFFF;">38</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFD700;">56</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFFFE0;">48</td>
+                                            <td style="background-color: #FFA500;">62</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFFFE0;">44</td><td style="background-color: #FFFFE0;">42</td><td style="background-color: #FFD700;">52</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>GPT-4o</strong></td>
+                                            <td style="background-color: #E0FFFF;">39</td><td style="background-color: #FFFFE0;">41</td><td style="background-color: #E0FFFF;">38</td><td style="background-color: #E0FFFF;">34</td><td style="background-color: #E0FFFF;">35</td>
+                                            <td style="background-color: #FFD700;">52</td><td style="background-color: #FFD700;">58</td><td style="background-color: #FFD700;">53</td><td style="background-color: #FFA500;">60</td><td style="background-color: #FFD700;">51</td>
+                                            <td style="background-color: #ADD8E6;">7</td><td style="background-color: #ADD8E6;">10</td><td style="background-color: #ADD8E6;">8</td><td style="background-color: #ADD8E6;">11</td><td style="background-color: #ADD8E6;">9</td>
+                                            <td style="background-color: #ADD8E6;">19</td><td style="background-color: #ADD8E6;">13</td><td style="background-color: #FFFFE0;">45</td><td style="background-color: #E0FFFF;">38</td><td style="background-color: #FFD700;">50</td>
+                                            <td style="background-color: #FFD700;">51</td><td style="background-color: #FD6864;">85</td><td style="background-color: #FFD700;">53</td><td style="background-color: #FFA500;">61</td><td style="background-color: #FFFFE0;">40</td>
+                                            <td style="background-color: #ADD8E6;">0</td><td style="background-color: #ADD8E6;">1</td><td style="background-color: #ADD8E6;">17</td><td style="background-color: #FFD700;">56</td><td style="background-color: #FF8C00;">77</td>
+                                            <td style="background-color: #DC143C; color: white;">100</td><td style="background-color: #DC143C; color: white;">98</td><td style="background-color: #FD6864;">82</td><td style="background-color: #FFFFE0;">43</td><td style="background-color: #ADD8E6;">23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <p>
+                            <em>The VideoQGen Benchmark.</em> Evaluating multimodal models across reasoning types, including basic understanding (<strong>BU</strong>), attribution (<strong>Atr</strong>), event reasoning (<strong>ER</strong>), reverse reasoning (<strong>RR</strong>), and counterfactual inference (<strong>CI</strong>). <strong>Gemini 2.5 Pro</strong> leads overall across relevance, answerability, and diversity dimensions, showing strong consistency across all reasoning categories.
+                        </p>
+                        <br>
+                        <p> Overview of the UD-VideoQA dataset, which comprises 28,800 question-answer pairs across various
 							reasoning categories. A higher concentration appears in counting, attribute recognition, and event
 							reasoning, followed by counterfactual inference and reverse reasoning (3a). Figures 3(b)-(d) illustrate
 							the dataset's emphasis on vehicular-related questions, the dominance of attribution and event reasoning
@@ -309,7 +494,7 @@
 			<div class="columns is-centered has-text-centered">
 				<div class="column is-four-fifths">
 					<h2 class="title is-3">InterAct - Experimentation Statistics </h2>
-					<img src="./media/InterAct/InterAct_Model_Stats.png" class="center" />
+					<img src="media\UDVideoQA\InterAct_Model_Stats.png" class="center" />
 					<div class="content has-text-justified">
 						<br>
 						<p> Performance analysis of VideoLlama2, Llava-NeXT-Video, and Qwen2-VL-7B-hf on the InterAct VideoQA
@@ -331,16 +516,13 @@
 					<h3 class="title is-3">Sample Data Recordings</h3>
 					<div class="publication-videos">
 						<div class="video-wrapper">
-							<iframe src="https://www.youtube.com/embed/zctaHOSsrXE?si=bF_imjL0QqvdZc1L"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/JFyoclpPwkw?si=qIEeg1RKhRm4UCAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 						<div class="video-wrapper">
-							<iframe src="https://www.youtube.com/embed/cpvGMZYcH24?si=o7q2rowf6SvWgBm-"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/d894Uqyczt4?si=vNPGVgWdM587thke" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 						<div class="video-wrapper">
-							<iframe src="https://www.youtube.com/embed/SSjnZOGdXfM?si=amTy_vwWz5WImBWt"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/dnKhOQeUfi4?si=ShUD5bKZPpJrpXWZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					</div>
 				</center>
@@ -357,7 +539,7 @@
 			<pre>
 @misc{vishal2025interactvideoreasoningrichvideoqa,
       title={UD-Video: Reasoning-Rich Video QA for Urban Traffic}, 
-      author={Joseph Raj Vishal and Divesh Basina and Rutuja Patil and Manas Srinivas Gowda and Katha Naik and Yezhou Yang and Bharatesh Chakravarthi},
+      author={Joseph Raj Vishal and Divesh Basina and Rutuja Patil and Manas Srinivas Gowda and Katha Naik and Kashyap Hegde Kota and Yezhou Yang and Bharatesh Chakravarthi},
       year={2025},
       eprint={2507.14743},
       archivePrefix={arXiv},
