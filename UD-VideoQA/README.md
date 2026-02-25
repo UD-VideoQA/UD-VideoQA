@@ -4,7 +4,14 @@ This project contains the source code for the [UD-VideoQA](https://github.com/jo
 # Cite
 If you find UD-VideoQA useful for your work please cite:
 ```
-@misc{}, 
+@misc{vishal2026udvideoqatrafficvideoquestion,
+      title={UDVideoQA: A Traffic Video Question Answering Dataset for Multi-Object Spatio-Temporal Reasoning in Urban Dynamics}, 
+      author={Joseph Raj Vishal and Nagasiri Poluri and Katha Naik and Rutuja Patil and Kashyap Hegde Kota and Krishna Vinod and Prithvi Jai Ramesh and Mohammad Farhadi and Yezhou Yang and Bharatesh Chakravarthi},
+      year={2026},
+      eprint={2602.21137},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.21137}, 
 }
 ```
 
